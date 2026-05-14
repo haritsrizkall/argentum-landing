@@ -18,19 +18,34 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith("#")) return;
+    e.preventDefault();
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all",
         scrolled
-          ? "border-b border-white/[0.06] bg-[rgba(7,7,19,0.7)] backdrop-blur-xl"
+          ? "border-b border-white/[0.06] bg-[rgba(33,36,39,0.7)] backdrop-blur-xl"
           : "border-b border-transparent",
       )}
     >
       <div className="container-page flex h-16 items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5">
-          <span className="grid h-7 w-7 place-items-center rounded-lg bg-[linear-gradient(135deg,#8B5CF6,#22D3EE)] shadow-[0_4px_20px_-4px_rgba(139,92,246,0.6)]">
-            <span className="font-bold text-bg" style={{ color: "#070713" }}>
+        <a
+          href="#"
+          onClick={(e) => handleAnchorClick(e, "#")}
+          className="flex items-center gap-2.5"
+        >
+          <span className="grid h-7 w-7 place-items-center rounded-lg bg-[linear-gradient(135deg,#F25C5C,#FB7185)] shadow-[0_4px_20px_-4px_rgba(242,92,92,0.6)]">
+            <span className="font-bold text-bg" style={{ color: "#212427" }}>
               A
             </span>
           </span>
@@ -44,6 +59,7 @@ export function Nav() {
             <a
               key={l.href}
               href={l.href}
+              onClick={(e) => handleAnchorClick(e, l.href)}
               className="rounded-full px-4 py-2 text-sm text-white/70 transition hover:bg-white/[0.05] hover:text-white"
             >
               {l.label}

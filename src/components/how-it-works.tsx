@@ -32,12 +32,12 @@ export function HowItWorks() {
         />
 
         <div className="relative mt-14">
-          <div className="pointer-events-none absolute left-0 right-0 top-[44px] hidden h-px bg-gradient-to-r from-transparent via-violet-400/50 to-transparent md:block" />
+          <div className="pointer-events-none absolute left-0 right-0 top-[44px] hidden h-px bg-gradient-to-r from-transparent via-red-400/50 to-transparent md:block" />
           <div className="grid gap-6 md:grid-cols-3">
             {STEPS.map((s, i) => (
               <div key={s.title} className="glass relative rounded-2xl p-6">
                 <div className="flex items-center gap-3">
-                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-[linear-gradient(135deg,#8B5CF6,#22D3EE)] text-white shadow-[0_8px_30px_-10px_rgba(139,92,246,0.7)]">
+                  <div className="grid h-11 w-11 place-items-center rounded-xl bg-[linear-gradient(135deg,#F25C5C,#FB7185)] text-white shadow-[0_8px_30px_-10px_rgba(242,92,92,0.7)]">
                     <s.icon className="h-5 w-5" />
                   </div>
                   <span className="font-mono text-xs text-white/40">

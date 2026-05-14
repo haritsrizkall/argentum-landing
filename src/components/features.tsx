@@ -57,8 +57,8 @@ export function Features() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f) => (
             <Card key={f.title}>
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-[linear-gradient(135deg,rgba(139,92,246,0.25),rgba(34,211,238,0.18))] ring-1 ring-white/10">
-                <f.icon className="h-5 w-5 text-violet-200" />
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-[linear-gradient(135deg,rgba(242,92,92,0.25),rgba(251,113,133,0.18))] ring-1 ring-white/10">
+                <f.icon className="h-5 w-5 text-red-200" />
               </div>
               <h3 className="mt-5 text-lg font-semibold">{f.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-white/60">

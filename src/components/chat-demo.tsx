@@ -118,8 +118,8 @@ export function ChatDemo() {
   }
 
   return (
-    <div className="glass-strong gradient-border relative mx-auto w-full max-w-3xl rounded-3xl p-1.5 shadow-[0_30px_120px_-30px_rgba(139,92,246,0.45)]">
-      <div className="rounded-[calc(theme(borderRadius.3xl)-6px)] bg-[rgba(7,7,19,0.6)] backdrop-blur-xl">
+    <div className="glass-strong gradient-border relative mx-auto w-full max-w-3xl rounded-3xl p-1.5 shadow-[0_30px_120px_-30px_rgba(242,92,92,0.45)]">
+      <div className="rounded-[calc(theme(borderRadius.3xl)-6px)] bg-[rgba(33,36,39,0.6)] backdrop-blur-xl">
         {/* header */}
         <div className="flex items-center justify-between border-b border-white/5 px-5 py-3">
           <div className="flex items-center gap-2.5">
@@ -138,17 +138,17 @@ export function ChatDemo() {
                 aria-label="What's in demo_sales_db?"
                 aria-expanded={helpOpen}
                 onClick={() => setHelpOpen((v) => !v)}
-                className="flex h-4 w-4 items-center justify-center rounded-full text-white/40 transition hover:bg-white/10 hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-violet-400/40"
+                className="flex h-4 w-4 items-center justify-center rounded-full text-white/40 transition hover:bg-white/10 hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-red-400/40"
               >
                 <HelpCircle className="h-3.5 w-3.5" />
               </button>
               {helpOpen && (
                 <div
                   role="dialog"
-                  className="absolute left-0 top-6 z-20 w-72 rounded-xl border border-white/10 bg-[rgba(12,12,28,0.95)] p-4 text-xs text-white/70 shadow-2xl backdrop-blur-xl sm:w-80"
+                  className="absolute left-0 top-6 z-20 w-72 rounded-xl border border-white/10 bg-[rgba(42,45,49,0.95)] p-4 text-xs text-white/70 shadow-2xl backdrop-blur-xl sm:w-80"
                 >
                   <div className="mb-2 flex items-center gap-2 text-white/90">
-                    <Database className="h-3.5 w-3.5 text-violet-300" />
+                    <Database className="h-3.5 w-3.5 text-red-300" />
                     <span className="font-mono text-[11px] uppercase tracking-wider">
                       demo_sales_db
                     </span>
@@ -195,9 +195,9 @@ export function ChatDemo() {
               type="button"
               disabled={busy}
               onClick={() => send(s.prompt)}
-              className="group inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-white/75 transition hover:border-violet-400/40 hover:bg-violet-400/10 hover:text-white disabled:opacity-50"
+              className="group inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-white/75 transition hover:border-red-400/40 hover:bg-red-400/10 hover:text-white disabled:opacity-50"
             >
-              <Sparkles className="h-3 w-3 text-violet-300 transition group-hover:text-violet-200" />
+              <Sparkles className="h-3 w-3 text-red-300 transition group-hover:text-red-200" />
               {s.prompt}
             </button>
           ))}
@@ -216,13 +216,13 @@ export function ChatDemo() {
             onChange={(e) => setInput(e.target.value)}
             placeholder="Ask Argentum about your data…"
             disabled={busy}
-            className="flex-1 rounded-full bg-white/[0.04] px-5 py-2.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-violet-400/40 disabled:opacity-60"
+            className="flex-1 rounded-full bg-white/[0.04] px-5 py-2.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:ring-2 focus:ring-red-400/40 disabled:opacity-60"
           />
           <button
             type="submit"
             disabled={busy || !input.trim()}
             aria-label="Send"
-            className="grid h-10 w-10 place-items-center rounded-full bg-[linear-gradient(120deg,#8B5CF6,#22D3EE)] text-white shadow-[0_8px_24px_-8px_rgba(139,92,246,0.7)] transition hover:brightness-110 disabled:opacity-40"
+            className="grid h-10 w-10 place-items-center rounded-full bg-[linear-gradient(120deg,#F25C5C,#FB7185)] text-white shadow-[0_8px_24px_-8px_rgba(242,92,92,0.7)] transition hover:brightness-110 disabled:opacity-40"
           >
             <ArrowUp className="h-4 w-4" />
           </button>
@@ -245,7 +245,7 @@ function MessageBubble({ message }: { message: Message }) {
         className={cn(
           "max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed",
           isUser
-            ? "bg-[linear-gradient(120deg,rgba(139,92,246,0.7),rgba(34,211,238,0.65))] text-white"
+            ? "bg-[linear-gradient(120deg,rgba(242,92,92,0.7),rgba(251,113,133,0.65))] text-white"
             : "bg-white/[0.04] text-white/90 ring-1 ring-white/[0.06]",
         )}
       >
@@ -302,8 +302,8 @@ function BarViz({ data }: { data: { name: string; value: number }[] }) {
         <BarChart data={data} margin={{ top: 4, right: 8, left: -12, bottom: 0 }}>
           <defs>
             <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#A78BFA" stopOpacity={1} />
-              <stop offset="100%" stopColor="#22D3EE" stopOpacity={0.7} />
+              <stop offset="0%" stopColor="#FCA5A5" stopOpacity={1} />
+              <stop offset="100%" stopColor="#FB7185" stopOpacity={0.7} />
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
@@ -319,12 +319,12 @@ function BarViz({ data }: { data: { name: string; value: number }[] }) {
           />
           <Tooltip
             contentStyle={{
-              background: "#0F0F1F",
+              background: "#2A2D31",
               border: "1px solid rgba(255,255,255,0.1)",
               borderRadius: 8,
               fontSize: 12,
             }}
-            cursor={{ fill: "rgba(139,92,246,0.08)" }}
+            cursor={{ fill: "rgba(242,92,92,0.08)" }}
           />
           <Bar dataKey="value" fill="url(#barGrad)" radius={[6, 6, 0, 0]} />
         </BarChart>
@@ -340,8 +340,8 @@ function LineViz({ data }: { data: { name: string; value: number }[] }) {
         <LineChart data={data} margin={{ top: 4, right: 8, left: -12, bottom: 0 }}>
           <defs>
             <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#8B5CF6" />
-              <stop offset="100%" stopColor="#22D3EE" />
+              <stop offset="0%" stopColor="#F25C5C" />
+              <stop offset="100%" stopColor="#FB7185" />
             </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
@@ -356,7 +356,7 @@ function LineViz({ data }: { data: { name: string; value: number }[] }) {
           />
           <Tooltip
             contentStyle={{
-              background: "#0F0F1F",
+              background: "#2A2D31",
               border: "1px solid rgba(255,255,255,0.1)",
               borderRadius: 8,
               fontSize: 12,
@@ -367,7 +367,7 @@ function LineViz({ data }: { data: { name: string; value: number }[] }) {
             dataKey="value"
             stroke="url(#lineGrad)"
             strokeWidth={2.5}
-            dot={{ fill: "#A78BFA", r: 3 }}
+            dot={{ fill: "#FCA5A5", r: 3 }}
             activeDot={{ r: 5 }}
           />
         </LineChart>
@@ -403,7 +403,7 @@ function TableViz({
                   key={j}
                   className={cn(
                     "px-3 py-2 text-white/80",
-                    j === row.length - 1 && "font-mono text-violet-300",
+                    j === row.length - 1 && "font-mono text-red-300",
                   )}
                 >
                   {cell}

@@ -45,8 +45,8 @@ export function Integrations() {
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          <LogoBlock title="Channels" items={CHANNELS} accent="violet" />
-          <LogoBlock title="Databases & warehouses" items={DATABASES} accent="cyan" />
+          <LogoBlock title="Channels" items={CHANNELS} accent="red" />
+          <LogoBlock title="Databases & warehouses" items={DATABASES} accent="rose" />
         </div>
       </div>
     </section>
@@ -60,14 +60,14 @@ function LogoBlock({
 }: {
   title: string;
   items: { icon: LucideIcon; label: string }[];
-  accent: "violet" | "cyan";
+  accent: "red" | "rose";
 }) {
   const ringColor =
-    accent === "violet"
-      ? "ring-violet-400/20 hover:ring-violet-400/40"
-      : "ring-cyan-400/20 hover:ring-cyan-400/40";
+    accent === "red"
+      ? "ring-red-400/20 hover:ring-red-400/40"
+      : "ring-rose-400/20 hover:ring-rose-400/40";
   const iconColor =
-    accent === "violet" ? "text-violet-200" : "text-cyan-200";
+    accent === "red" ? "text-red-200" : "text-rose-200";
 
   return (
     <div className="glass rounded-2xl p-6">

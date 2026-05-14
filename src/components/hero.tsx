@@ -10,7 +10,7 @@ export function Hero() {
       <div className="container-page">
         <div className="mx-auto max-w-3xl text-center">
           <Badge>
-            <Sparkles className="h-3 w-3 text-violet-300" />
+            <Sparkles className="h-3 w-3 text-red-300" />
             <span>AI agent for your data</span>
           </Badge>
           <h1 className="mt-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">

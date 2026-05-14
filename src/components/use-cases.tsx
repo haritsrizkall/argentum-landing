@@ -55,7 +55,7 @@ export function UseCases() {
             <div key={c.team} className="glass group rounded-2xl p-6">
               <div className="flex items-center gap-3">
                 <div className="grid h-10 w-10 place-items-center rounded-lg bg-white/[0.04] ring-1 ring-white/10">
-                  <c.icon className="h-4 w-4 text-cyan-200" />
+                  <c.icon className="h-4 w-4 text-rose-200" />
                 </div>
                 <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/45">
                   {c.team}
@@ -65,7 +65,7 @@ export function UseCases() {
               <p className="mt-2 text-sm leading-relaxed text-white/60">
                 {c.body}
               </p>
-              <p className="mt-4 rounded-lg border border-white/[0.06] bg-black/30 px-3 py-2 font-mono text-xs text-violet-200/90">
+              <p className="mt-4 rounded-lg border border-white/[0.06] bg-black/30 px-3 py-2 font-mono text-xs text-red-200/90">
                 {c.example}
               </p>
             </div>

@@ -4,18 +4,18 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --color-bg: #070713;
-  --color-surface: #0F0F1F;
-  --color-surface-2: #16162A;
-  --color-fg: #F4F4FA;
-  --color-muted: #9A9AB0;
+  --color-bg: #212427;
+  --color-surface: #2A2D31;
+  --color-surface-2: #313539;
+  --color-fg: #F0F0EE;
+  --color-muted: #8A8F98;
   --color-border: rgba(255, 255, 255, 0.08);
   --color-border-strong: rgba(255, 255, 255, 0.16);
 
-  --color-violet: #8B5CF6;
-  --color-cyan: #22D3EE;
-  --color-violet-soft: rgba(139, 92, 246, 0.18);
-  --color-cyan-soft: rgba(34, 211, 238, 0.18);
+  --color-red: #F25C5C;
+  --color-rose: #FB7185;
+  --color-red-soft: rgba(242, 92, 92, 0.18);
+  --color-rose-soft: rgba(251, 113, 133, 0.18);
 
   --radius-card: 1rem;
   --radius-pill: 9999px;
@@ -28,6 +28,11 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   html,
   body {
     background-color: var(--color-bg);
@@ -38,15 +43,15 @@
 
   body {
     background-image:
-      radial-gradient(1200px 600px at 10% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
-      radial-gradient(900px 500px at 110% 0%, rgba(34, 211, 238, 0.14), transparent 60%);
+      radial-gradient(1200px 600px at 10% -10%, rgba(242, 92, 92, 0.18), transparent 60%),
+      radial-gradient(900px 500px at 110% 0%, rgba(251, 113, 133, 0.14), transparent 60%);
     background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden;
   }
 
   ::selection {
-    background-color: rgba(139, 92, 246, 0.45);
+    background-color: rgba(242, 92, 92, 0.45);
     color: #fff;
   }
 
@@ -62,7 +67,7 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(120deg, var(--color-violet) 0%, var(--color-cyan) 100%);
+    background: linear-gradient(120deg, var(--color-red) 0%, var(--color-rose) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -92,7 +97,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, var(--color-violet), var(--color-cyan));
+    background: linear-gradient(135deg, var(--color-red), var(--color-rose));
     -webkit-mask:
       linear-gradient(#000 0 0) content-box,
       linear-gradient(#000 0 0);
@@ -110,7 +115,7 @@
   }
 
   .glow-violet {
-    box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.4), 0 12px 60px -12px rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 0 1px rgba(242, 92, 92, 0.4), 0 12px 60px -12px rgba(242, 92, 92, 0.6);
   }
 
   .container-page {
